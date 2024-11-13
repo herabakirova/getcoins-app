@@ -11,6 +11,7 @@ This documentation outlines the steps for setting up and deploying the GetCoins 
 ## Setup Instructions
 
 ### 1. Clone the Git Repository
+1. Clone the Git Repository
 
     ```bash
     git clone https://github.com/herabakirova/getcoins-app.git
@@ -26,7 +27,7 @@ This documentation outlines the steps for setting up and deploying the GetCoins 
 
 ### 3. Export AWS Credentials as Environment Variables
 
-Ensure AWS credentials are exported as environment variables so Terraform and Jenkins can access your AWS account.
+1. Ensure AWS credentials are exported as environment variables so Terraform and Jenkins can access your AWS account.
 
     ```bash
     export AWS_ACCESS_KEY_ID=<your-access-key>
@@ -36,7 +37,7 @@ Ensure AWS credentials are exported as environment variables so Terraform and Je
 
 ### 4. Run Terraform
 
-Initialize and apply the Terraform configuration to set up the infrastructure:
+1. Initialize and apply the Terraform configuration to set up the infrastructure:
 
     ```bash
     terraform init
