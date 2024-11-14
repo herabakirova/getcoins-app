@@ -3,7 +3,7 @@ pipeline {
     stages {
         stage("Checkout SCM") {
             steps {
-                git branch: 'main', url: 'https://github.com/herabakirova/getcoins.git'
+                git branch: 'main', url: 'https://github.com/herabakirova/getcoins-app.git'
             }
         }
         stage('Run Tests') {
