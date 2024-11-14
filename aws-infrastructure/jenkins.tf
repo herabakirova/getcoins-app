@@ -44,3 +44,9 @@ resource "null_resource" "wait_for_jenkins" {
 
   depends_on = [aws_instance.jenkins]
 }
+
+output "instance_public_ip" {
+  value = aws_instance.jenkins.public_ip
+  description = "The public IP of Jenkins instance"
+}
+

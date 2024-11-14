@@ -37,9 +37,10 @@ This documentation outlines the steps for setting up and deploying the GetCoins 
 
 ### 4. Run Terraform
 
-1. Initialize and apply the Terraform configuration to set up the infrastructure:
+1. Navigate to **aws-infrastructure**. Initialize and apply the Terraform configuration to set up the infrastructure:
 
     ```bash
+    cd ./aws-infrastructure
     terraform init
     terraform plan -var-file=var.tfvars 
     terraform apply -var-file=var.tfvars -auto-approve
@@ -55,10 +56,9 @@ Grab the public IP of your newly created EC2 instance from the Terraform output.
 
 In Jenkins, configure the following credentials:
    - **AWS Credentials**: The type of secret is "Username with password" (ID: `aws`).
-   - **Terraform Variables**: The type of secret is "Secret file" (ID: `terraform-vars`).
    - **ECR Credentials**: The type of secret is "Secret text", the value should be set to `aws ecr get-login-password --region us-east-2` (ID: `ecr`).
 
 ### 7. Create Jenkins Pipeline
 
-In Jenkins, manually trigger the pipeline job or configure it to automatically pull from the GitHub repository. You can also set up a webhook in your GitHub repository to trigger the pipeline on push events. Once the pipeline completes, access the application in your browser using the DNS address provided by Jenkins as part of the pipeline output.
+In Jenkins, create pipeline and pull the script from SCM (Git). Manually trigger the pipeline job or set up a webhook in your GitHub repository to trigger the pipeline on push events. Once the pipeline completes, access the application in your browser using the DNS address provided by Jenkins as part of the pipeline output.
 
