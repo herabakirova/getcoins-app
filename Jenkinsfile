@@ -62,7 +62,7 @@ pipeline {
                 sh '''
                 helm package ./helm-app
                 helm install getcoins-app ./getcoins-application-*.tgz
-                sleep 60
+                sleep 300
                 kubectl get service
                 '''
             }
